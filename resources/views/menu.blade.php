@@ -232,7 +232,7 @@
                 ["name" => "شوكولاتة", "price" => "1.5 JD"],
                 ["name" => "فانيلا", "price" => " 1.5 JD"],
                 ["name" => "فراولة", "price" => " 1.5 JD"],
-                ["name" => "بستاشيو", "price" => " 1.5 JD"],
+                ["name" => " سنيكرز ", "price" => " 1.5 JD"],
                 ["name" => "رينبو", "price" => " 1.5 JD"],
                 ["name" => " تشيز كيك ", "price" => " 1.5 JD"],
                 ["name" => "أوريو", "price" => " 1.5 JD"]
@@ -263,7 +263,7 @@
                ["name" => "ميلك شيك شوكولاتة", "price" => "2.0 JD"],
     ["name" => "ميلك شيك فانيلا", "price" => "2.0 JD"],
     ["name" => "ميلك شيك فراولة", "price" => "2.0 JD"],
-    ["name" => "ميلك شيك بستاشيو", "price" => "2.0 JD"],
+    ["name" => "ميلك شيك سنيكرز ", "price" => "2.0 JD"],
     ["name" => "ميلك شيك رينبو", "price" => "2.0 JD"],
     ["name" => "ميلك شيك تشيز كيك", "price" => "2.0 JD"],
     ["name" => "ميلك شيك أوريو", "price" => "2.0 JD"]
@@ -311,7 +311,7 @@
     </div>
 
     <div class="footer">
-        <h4>© Developed by: Zaid Abu Ameen</h4>
+<h4>© Developed by: <a href="https://www.linkedin.com/in/zaid-abuameen-292070259/" target="_blank">Zaid Abu Ameen</a></h4>
     </div>
 </div>
 </body>
