@@ -201,7 +201,31 @@
             .section h2 {
                 font-size: 22px;
             }
-        }
+        } 
+         .logo-corner {
+        position: fixed;              /* يثبّت الشعار بمكانه */
+        top: 20px;                    /* المسافة من الأعلى */
+        left: 20px;                   /* المسافة من اليسار */
+        z-index: 9999;                /* فوق كل شي */
+        background-color: rgba(255, 255, 255, 0.1); /* خلفية شفافة خفيفة */
+        border-radius: 50%;
+        padding: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(4px);   /* يعطيه فخامة */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .logo-corner:hover {
+        transform: scale(1.08);
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .logo-corner img {
+        height: 85px;
+        width: 85px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
     </style>
 </head>
 <body>
@@ -211,7 +235,9 @@
     <a href="{{ route('menu') }}">المنيو</a>
 </nav>
 </nav>
-
+<div class="logo-corner">
+    <img src="{{ asset('images\CODE CORNER LOGO1.jpg') }}" alt="Code Corner Logo">
+</div>
 <div class="container">
     <h1>Code Corner</h1>
 
