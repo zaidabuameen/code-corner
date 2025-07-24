@@ -3,386 +3,487 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Code Corner Menu</title>
-    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&display=swap" rel="stylesheet">
-<style>
-       body {
+    <title>Code Corner Menu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #305569;
+            --secondary: #a5c62b;
+            --accent: #d4ed6b;
+            --text: #f8f9fa;
+            --light-bg: #3f6b7d;
+        }
+        
+        body {
             margin: 0;
             padding: 0;
             font-family: 'Almarai', sans-serif;
-            background-color: #305569;
-            color: #fff;
+            background-color: var(--primary);
+            color: var(--text);
             min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(165, 198, 43, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(165, 198, 43, 0.1) 0%, transparent 20%);
+        }
+
+        .logo-container {
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .logo-container::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 25%;
+            right: 25%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+        }
+
+        .logo-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--secondary);
+            box-shadow: 0 4px 20px rgba(165, 198, 43, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .logo-img:hover {
+            transform: rotate(10deg);
         }
 
         nav {
-            text-align: center;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.1);
+            background-color: rgba(48, 85, 105, 0.9);
+            backdrop-filter: blur(5px);
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
         }
 
         nav a {
-            color: #a5c62b;
-            margin: 0 15px;
+            color: var(--accent);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 700;
             font-size: 18px;
-            transition: color 0.3s;
+            padding: 8px 15px;
+            border-radius: 30px;
+            transition: all 0.3s;
+            position: relative;
         }
 
         nav a:hover {
-            color: #d4ed6b;
+            color: var(--primary);
+            background-color: var(--secondary);
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            right: 15px;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: calc(100% - 30px);
         }
 
         .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 30px 20px;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
         h1 {
             text-align: center;
-            color: #a5c62b;
-            font-size: 36px;
+            color: var(--secondary);
+            font-size: 2.8rem;
             margin: 30px 0;
             position: relative;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         h1::after {
             content: "";
             display: block;
             width: 150px;
-            height: 3px;
-            background: #a5c62b;
-            margin: 15px auto;
+            height: 4px;
+            background: linear-gradient(to right, transparent, var(--secondary), transparent);
+            margin: 20px auto;
+            border-radius: 2px;
         }
 
-        .section {
-            background-color: #3f6b7d;
-            border-right: 6px solid #a5c62b;
-            border-radius: 16px;
-            padding: 25px;
-            margin-bottom: 30px;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-            display: flex;
-            flex-direction: column;
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
         }
 
-        .section-content {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 25px;
+        .menu-card {
+            background-color: var(--light-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-right: 5px solid var(--secondary);
         }
 
-        .section-text {
-            flex: 1;
-            min-width: 250px;
+        .menu-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
         }
 
-        .section-img {
-            flex: 1;
-            min-width: 250px;
-            text-align: center;
+        .card-header {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
         }
 
-        .section-img img {
-            max-width: 100%;
-            height: auto;
-            max-height: 200px;
-            border-radius: 10px;
+        .card-img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            border: 3px solid #a5c62b;
+            transition: transform 0.5s;
         }
 
-        .section h2 {
-            font-size: 24px;
-            color: #ffffff;
-            margin-bottom: 15px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #a5c62b;
+        .menu-card:hover .card-img {
+            transform: scale(1.05);
         }
 
-        .section ul {
-            list-style-type: none;
+        .card-category {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: var(--secondary);
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 14px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-body {
+            padding: 25px;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            margin: 0 0 15px;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .menu-items {
+            list-style: none;
             padding: 0;
-            font-size: 18px;
+            margin: 0;
         }
 
-        .section ul li {
+        .menu-item {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px dashed rgba(255,255,255,0.2);
-            padding: 8px 0;
+            padding: 12px 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
         }
 
-        .price {
-            color: #a5c62b;
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-name {
+            flex: 1;
+        }
+
+        .item-price {
+            color: var(--secondary);
+            font-weight: bold;
+            min-width: 100px;
+            text-align: left;
+        }
+
+        .special-card {
+            position: relative;
+            grid-column: 1 / -1;
+        }
+
+        .special-card::before {
+            content: "✨ مميز";
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            background-color: var(--secondary);
+            color: var(--primary);
+            padding: 5px 20px;
+            border-radius: 30px;
             font-weight: bold;
             font-size: 16px;
+            z-index: 1;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
-        .highlight {
-            color: #a5c62b;
+        .feedback-section {
+            background: linear-gradient(135deg, var(--light-bg), var(--primary));
+            border-radius: 15px;
+            padding: 40px;
+            margin: 60px 0 30px;
+            text-align: center;
+            border-right: 5px solid var(--secondary);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .feedback-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .feedback-text {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .feedback-btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--primary);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
             font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(165, 198, 43, 0.3);
+        }
+
+        .feedback-btn:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(165, 198, 43, 0.4);
         }
 
         .footer {
             text-align: center;
-            margin-top: 50px;
-            font-size: 14px;
-            color: #aaa;
+            padding: 30px;
+            margin-top: 60px;
+            background-color: rgba(0, 0, 0, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .feedback-link {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #a5c62b;
-            color: #1e2b30;
+        .footer a {
+            color: var(--accent);
             text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: all 0.3s;
+            transition: color 0.3s;
         }
 
-        .feedback-link:hover {
-            background-color: #91b626;
-            transform: translateY(-2px);
-        }
-
-        .special-note {
-            background: rgba(165, 198, 43, 0.1);
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 15px;
-            border-right: 3px solid #a5c62b;
-        }
-
-        .feedback-section {
-            background-color: #3f6b7d;
-            border-right: 6px solid #a5c62b;
-            border-radius: 16px;
-            padding: 25px;
-            margin: 30px 0;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-            text-align: center;
-        }
-
-        .feedback-section h2 {
-            color: #ffffff;
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        .feedback-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
+        .footer a:hover {
+            color: var(--secondary);
+            text-decoration: underline;
         }
 
         @media (max-width: 768px) {
-            .section-content {
-                flex-direction: column;
+            .menu-grid {
+                grid-template-columns: 1fr;
             }
-
-            .section-img {
-                order: -1;
-                margin-bottom: 20px;
-            }
-
+            
             h1 {
-                font-size: 28px;
+                font-size: 2rem;
             }
-
-            .section h2 {
-                font-size: 22px;
+            
+            .nav-container {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
             }
-        } 
-     /*    .logo-corner {
-        position: fixed;            
-        top: 20px;                  
-        left: 20px;               
-        z-index: 9999;                
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-        padding: 10px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-        backdrop-filter: blur(4px);   
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+            
+            .menu-card {
+                border-right-width: 3px;
+            }
+        }
 
-    .logo-corner:hover {
-        transform: scale(1.08);
-        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
-    }
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-    .logo-corner img {
-        height: 85px;
-        width: 85px;
-        border-radius: 50%;
-        object-fit: cover;
-    }
-    */
-</style>
+        .menu-card {
+            animation: fadeIn 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .menu-card:nth-child(1) { animation-delay: 0.1s; }
+        .menu-card:nth-child(2) { animation-delay: 0.2s; }
+        .menu-card:nth-child(3) { animation-delay: 0.3s; }
+        .menu-card:nth-child(4) { animation-delay: 0.4s; }
+        .menu-card:nth-child(5) { animation-delay: 0.5s; }
+        .menu-card:nth-child(6) { animation-delay: 0.6s; }
+        .menu-card:nth-child(7) { animation-delay: 0.7s; }
+    </style>
 </head>
 <body>
-<div style="text-align:center; margin: 40px 0;">
-<img src="{{ asset('images/CODE CORNER LOGO1.jpg') }}" alt="Code Corner Logo"
+    <div class="logo-container">
+        <img src="{{ asset('images/CODE CORNER LOGO1.jpg') }}" alt="Code Corner Logo" class="logo-img">
+    </div>
 
-style="width: 90px; border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-</div>
-
-<nav>
-   <nav>
-    <a href="{{ route('notes.index') }}">الملاحظات</a>
-    <a href="{{ route('menu') }}">المنيو</a>
-</nav>
-</nav>
-<!--<div class="logo-corner">
-    <img src="{{ asset('images\CODE CORNER LOGO1.jpg') }}" alt="Code Corner Logo">
-</div>-->
-<div class="container">
-    <h1>Code Corner</h1>
-
-    @php
-        $menu = [
-            ["title" => "حلويات 🍰", "img" => "sweets.jpg", "items" => [
-                ["name" => " تشيز كيك توت", "price" => "2.0 JD"],
-                ["name" => "تيراميسو", "price" => "2.0 JD"],
-                ["name" => " ريد فيلفت", "price" => "2.5 JD"],
-                ["name" => " تشيز أوريو", "price" => "1.8 JD"],
-                ["name" => " شوكو جار", "price" => "2.2 JD"],
-                ["name" => " تشيز لوتس", "price" => "1.5 JD"],
-                ["name" => " هبة البستاشيو", "price" => "1.5 JD"],
-                ["name" => " ليزا كات", "price" => "2.0 JD"],
-            
-            ]],
-[
-    "title" => "البوظة 🍦",
-    "img"   => "Various_coloured_ice_cream_shutterstock_1678666684.jpg",
-    "items" => [
-        [
-            "name"  => "شوكولاتة",
-            "price" => "1 JD / سكوب — 1.5 JD / سكوبين"
-        ],
-        [
-            "name"  => "فانيلا",
-            "price" => "1 JD / سكوب — 1.5 JD / سكوبين"
-        ],
-        [
-            "name"  => "فراولة",
-            "price" => "1 JD / سكوب — 1.5 JD / سكوبين"
-        ],
-        [
-            "name"  => "سنيكرز",
-            "price" => "1 JD / سكوب — 1.5 JD / سكوبين"
-        ],
-        [
-            "name"  => "رينبو",
-            "price" => "1 JD / سكوب — 1.5 JD / سكوبين"
-        ],
-        [
-            "name"  => "تشيز كيك",
-            "price" => "1 JD / سكوب — 1.5 JD / سكوبين"
-        ],
-        [
-            "name"  => "أوريو",
-            "price" => "1 JD / سكوب — 1.5 JD / سكوبين"
-        ]
-    ]
-]
-,
-
-  [
-    "title" => "Cooffe ☕",
-    "img" => "v60pic.jpg",
-    "items" => [
-        ["name" => "V60",         "price" => "2.5 JD"],
-        ["name" => "كولد برو",    "price" => "2.5 JD"]
-    ]
-],
-
-
-            ["title" => "٣ أنواع سلش 🧊", "img" => "WhatsApp Image 2025-06-04 at 20.21.31_3c502a52.jpg", "items" => [
-                ["name" => "ليمون نعنع", "price" => "1.0 JD"],
-                ["name" => "فراولة", "price" => "1.0 JD"],
-                ["name" => "بلو بيري", "price" => "1.0 JD"]
-            ]],
-          /*  ["title" => "فواكه موسمية 🍉", "img" => "fruit-cups.jpg", "items" => [
-                ["name" => "بطيخ", "price" => "1.2 JD"],
-                ["name" => "شمام", "price" => "1.2 JD"],
-                ["name" => "موز", "price" => "1.2 JD"],
-                ["name" => "حسب الموسم", "price" => "متغير"]
-            ]],
-            */
-            ["title" => "العصائر 🥤", "img" => "blender.jpg", "items" => [
-                ["name" => "ليمون ونعنع", "price" => "1.5 JD"],
-                ["name" => "ليمون", "price" => " 1.5 JD"],
-                ["name" => "برتقال", "price" => " 1.5 JD"]
-            ]],
-            ["title" => "كوكتيلات فواكه 🍹", "img" => "Fruit_Drinks_.webp", "items" => [
-                ["name" => "كوكتيل موز", "price" => "2.0 JD"],
-                ["name" => "كوكتيل فراولة", "price" => "2.0 JD"],
-                ["name" => "كوكتيل مانجو", "price" => "2.0 JD"]
-            ]],
-            ["title" => " milkshakes 🍨", "img" => "milkshake pics.jpg", "items" => [
-               ["name" => "ميلك شيك شوكولاتة", "price" => "2.0 JD"],
-    ["name" => "ميلك شيك فانيلا", "price" => "2.0 JD"],
-    ["name" => "ميلك شيك فراولة", "price" => "2.0 JD"],
-    ["name" => "ميلك شيك سنيكرز ", "price" => "2.0 JD"],
-    ["name" => "ميلك شيك رينبو", "price" => "2.0 JD"],
-    ["name" => "ميلك شيك تشيز كيك", "price" => "2.0 JD"],
-    ["name" => "ميلك شيك أوريو", "price" => "2.0 JD"]
-]], 
-            ["title" => "Code Corner Mixology ✨", "img" => "special-mix.jpg", "items" => [
-                ["name" => "فانيلا + حليب + موز", "price" => "2.8 JD"],
-                ["name" => "فراولة + بوظة فانيلا + حليب", "price" => "2.8 JD"],
-                ["name" => "كيت كات + موز + شوكولاتة", "price" => "3.0 JD"]
-            ]]
-        ];
-    @endphp
-
-    @foreach($menu as $section)
-        <div class="section">
-            <div class="section-content">
-                <div class="section-text">
-                    <h2>{{ $section['title'] }}</h2>
-                    <ul>
-                        @foreach($section['items'] as $item)
-                            <li>{{ $item['name'] }} <span class="price">{{ $item['price'] }}</span></li>
-                        @endforeach
-                    </ul>
-                    @if($section['title'] === 'Code Corner Mixology ✨')
-                        <div class="special-note">
-                            <p class="highlight">✨ ابتكارات جديدة وحصرية كل أسبوع! ✨</p>
-                            <p>كوكتيلات لا تلاقيها بأي مكان ثاني 😋</p>
-                        </div>
-                    @endif
-                </div>
-                <div class="section-img">
-                    <img src="{{ asset('images/' . $section['img']) }}" alt="{{ $section['title'] }}">
-                </div>
-            </div>
+    <nav>
+        <div class="nav-container">
+            <a href="{{ route('notes.index') }}"><i class="fas fa-notes"></i> الملاحظات</a>
+            <a href="{{ route('menu') }}"><i class="fas fa-utensils"></i> المنيو</a>
         </div>
-    @endforeach
+    </nav>
 
-    <!-- قسم الملاحظات الجديد المستقل -->
-    <div class="feedback-section">
-        <h2>شاركونا آرائكم</h2>
-        <div class="feedback-content">
-            <p>نرحب بملاحظاتكم وآرائكم لمساعدتنا في تحسين تجربتكم</p>
-            <a href="{{ route('notes.index') }}" class="feedback-link">اضغطوا هنا لإبداء رأيكم</a>
-            
+    <div class="container">
+        <h1> Code Corner</h1>
+        
+        <div class="menu-grid">
+            @php
+                $menu = [
+                    [
+                        "title" => "حلويات 🍰", 
+                        "img" => "sweets.jpg", 
+                        "items" => [
+                            ["name" => "تشيز كيك توت", "price" => "2.0 JD"],
+                            ["name" => "تيراميسو", "price" => "2.0 JD"],
+                            ["name" => "ريد فيلفت", "price" => "2.5 JD"],
+                            ["name" => "تشيز أوريو", "price" => "1.8 JD"],
+                            ["name" => "شوكو جار", "price" => "2.2 JD"],
+                            ["name" => "تشيز لوتس", "price" => "1.5 JD"],
+                            ["name" => "هبة البستاشيو", "price" => "1.5 JD"],
+                            ["name" => "ليزا كات", "price" => "2.0 JD"],
+                        ]
+                    ],
+                    [
+                        "title" => "البوظة 🍦",
+                        "img"   => "Various_coloured_ice_cream_shutterstock_1678666684.jpg",
+                        "items" => [
+                            ["name" => "شوكولاتة", "price" => "1 JD / سكوب — 1.5 JD / سكوبين"],
+                            ["name" => "فانيلا", "price" => "1 JD / سكوب — 1.5 JD / سكوبين"],
+                            ["name" => "فراولة", "price" => "1 JD / سكوب — 1.5 JD / سكوبين"],
+                            ["name" => "سنيكرز", "price" => "1 JD / سكوب — 1.5 JD / سكوبين"],
+                            ["name" => "رينبو", "price" => "1 JD / سكوب — 1.5 JD / سكوبين"],
+                            ["name" => "تشيز كيك", "price" => "1 JD / سكوب — 1.5 JD / سكوبين"],
+                            ["name" => "أوريو", "price" => "1 JD / سكوب — 1.5 JD / سكوبين"]
+                        ]
+                    ],
+                    [
+                        "title" => "قهوة خاصة ☕",
+                        "img" => "v60pic.jpg",
+                        "items" => [
+                            ["name" => "V60", "price" => "2.5 JD"],
+                            ["name" => "كولد برو", "price" => "2.5 JD"]
+                        ]
+                    ],
+                    [
+                        "title" => "٣ أنواع سلش 🧊", 
+                        "img" => "WhatsApp Image 2025-06-04 at 20.21.31_3c502a52.jpg", 
+                        "items" => [
+                            ["name" => "ليمون نعنع", "price" => "1.0 JD"],
+                            ["name" => "فراولة", "price" => "1.0 JD"],
+                            ["name" => "بلو بيري", "price" => "1.0 JD"]
+                        ]
+                    ],
+                    [
+                        "title" => "العصائر 🥤", 
+                        "img" => "blender.jpg", 
+                        "items" => [
+                            ["name" => "ليمون ونعنع", "price" => "1.5 JD"],
+                            ["name" => "ليمون", "price" => "1.5 JD"],
+                            ["name" => "برتقال", "price" => "1.5 JD"]
+                        ]
+                    ],
+                    [
+                        "title" => "كوكتيلات فواكه 🍹", 
+                        "img" => "Fruit_Drinks_.webp", 
+                        "items" => [
+                            ["name" => "كوكتيل موز", "price" => "2.0 JD"],
+                            ["name" => "كوكتيل فراولة", "price" => "2.0 JD"],
+                            ["name" => "كوكتيل مانجو", "price" => "2.0 JD"]
+                        ]
+                    ],
+                    [
+                        "title" => "ميلك شيك 🍨", 
+                        "img" => "milkshake pics.jpg", 
+                        "items" => [
+                            ["name" => "ميلك شيك شوكولاتة", "price" => "2.0 JD"],
+                            ["name" => "ميلك شيك فانيلا", "price" => "2.0 JD"],
+                            ["name" => "ميلك شيك فراولة", "price" => "2.0 JD"],
+                            ["name" => "ميلك شيك سنيكرز", "price" => "2.0 JD"],
+                            ["name" => "ميلك شيك رينبو", "price" => "2.0 JD"],
+                            ["name" => "ميلك شيك تشيز كيك", "price" => "2.0 JD"],
+                            ["name" => "ميلك شيك أوريو", "price" => "2.0 JD"]
+                        ]
+                    ],
+                    [
+                        "title" => "Code Corner Mixology ✨", 
+                        "img" => "special-mix.jpg", 
+                        "items" => [
+                            ["name" => "فانيلا + حليب + موز", "price" => "2.8 JD"],
+                            ["name" => "فراولة + بوظة فانيلا + حليب", "price" => "2.8 JD"],
+                            ["name" => "كيت كات + موز + شوكولاتة", "price" => "3.0 JD"]
+                        ],
+                        "special" => true
+                    ]
+                ];
+            @endphp
+
+            @foreach($menu as $item)
+                <div class="menu-card @if(isset($item['special'])) special-card @endif">
+                    <div class="card-header">
+                        <img src="{{ asset('images/' . $item['img']) }}" alt="{{ $item['title'] }}" class="card-img">
+                        <div class="card-category">{{ $item['title'] }}</div>
+                    </div>
+                    <div class="card-body">
+                      
+                        </h3>
+                        <ul class="menu-items">
+                            @foreach($item['items'] as $menuItem)
+                                <li class="menu-item">
+                                    <span class="item-name">{{ $menuItem['name'] }}</span>
+                                    <span class="item-price">{{ $menuItem['price'] }}</span>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+
+        <div class="feedback-section">
+            <h2 class="feedback-title">شاركنا رأيك!</h2>
+            <p class="feedback-text">نحن نقدّر ملاحظاتك لمساعدتنا في تحسين تجربتك في Code Corner</p>
+            <a href="{{ route('notes.index') }}" class="feedback-btn">
+                <i class="fas fa-comment-alt"></i> اضغط هنا لإبداء رأيك
+            </a>
         </div>
     </div>
 
     <div class="footer">
 <h4>© Developed by: <a href="https://www.linkedin.com/in/zaid-abuameen-292070259/" target="_blank">Zaid Abu Ameen</a></h4>
     </div>
-</div>
 </body>
-</html> 
+</html>
