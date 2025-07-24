@@ -5,239 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Code Corner Menu</title>
     <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Almarai', sans-serif;
-            background-color: #305569;
-            color: #fff;
-            min-height: 100vh;
-        }
-
-        nav {
-            text-align: center;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.1);
-        }
-
-        nav a {
-            color: #a5c62b;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 18px;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #d4ed6b;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 30px 20px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #a5c62b;
-            font-size: 36px;
-            margin: 30px 0;
-            position: relative;
-        }
-
-        h1::after {
-            content: "";
-            display: block;
-            width: 150px;
-            height: 3px;
-            background: #a5c62b;
-            margin: 15px auto;
-        }
-
-        .section {
-            background-color: #3f6b7d;
-            border-right: 6px solid #a5c62b;
-            border-radius: 16px;
-            padding: 25px;
-            margin-bottom: 30px;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .section-content {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 25px;
-        }
-
-        .section-text {
-            flex: 1;
-            min-width: 250px;
-        }
-
-        .section-img {
-            flex: 1;
-            min-width: 250px;
-            text-align: center;
-        }
-
-        .section-img img {
-            max-width: 100%;
-            height: auto;
-            max-height: 200px;
-            border-radius: 10px;
-            object-fit: cover;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            border: 3px solid #a5c62b;
-        }
-
-        .section h2 {
-            font-size: 24px;
-            color: #ffffff;
-            margin-bottom: 15px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #a5c62b;
-        }
-
-        .section ul {
-            list-style-type: none;
-            padding: 0;
-            font-size: 18px;
-        }
-
-        .section ul li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px dashed rgba(255,255,255,0.2);
-            padding: 8px 0;
-        }
-
-        .price {
-            color: #a5c62b;
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        .highlight {
-            color: #a5c62b;
-            font-weight: bold;
-        }
-
-        .footer {
-            text-align: center;
-            margin-top: 50px;
-            font-size: 14px;
-            color: #aaa;
-        }
-
-        .feedback-link {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #a5c62b;
-            color: #1e2b30;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: all 0.3s;
-        }
-
-        .feedback-link:hover {
-            background-color: #91b626;
-            transform: translateY(-2px);
-        }
-
-        .special-note {
-            background: rgba(165, 198, 43, 0.1);
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 15px;
-            border-right: 3px solid #a5c62b;
-        }
-
-        .feedback-section {
-            background-color: #3f6b7d;
-            border-right: 6px solid #a5c62b;
-            border-radius: 16px;
-            padding: 25px;
-            margin: 30px 0;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-            text-align: center;
-        }
-
-        .feedback-section h2 {
-            color: #ffffff;
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        .feedback-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-        }
-
-        @media (max-width: 768px) {
-            .section-content {
-                flex-direction: column;
-            }
-
-            .section-img {
-                order: -1;
-                margin-bottom: 20px;
-            }
-
-            h1 {
-                font-size: 28px;
-            }
-
-            .section h2 {
-                font-size: 22px;
-            }
-        } 
-         .logo-corner {
-        position: fixed;              /* يثبّت الشعار بمكانه */
-        top: 20px;                    /* المسافة من الأعلى */
-        left: 20px;                   /* المسافة من اليسار */
-        z-index: 9999;                /* فوق كل شي */
-        background-color: rgba(255, 255, 255, 0.1); /* خلفية شفافة خفيفة */
-        border-radius: 50%;
-        padding: 10px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-        backdrop-filter: blur(4px);   /* يعطيه فخامة */
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .logo-corner:hover {
-        transform: scale(1.08);
-        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
-    }
-
-    .logo-corner img {
-        height: 85px;
-        width: 85px;
-        border-radius: 50%;
-        object-fit: cover;
-    }
-    </style>
+<link rel="stylesheet" href="{{ asset('style.css') }}">
 </head>
 <body>
+<div style="text-align:center; margin: 40px 0;">
+<img src="{{ asset('images/CODE CORNER LOGO1.jpg') }}" alt="Code Corner Logo"
+
+style="width: 90px; border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+</div>
+
 <nav>
    <nav>
     <a href="{{ route('notes.index') }}">الملاحظات</a>
     <a href="{{ route('menu') }}">المنيو</a>
 </nav>
 </nav>
-<div class="logo-corner">
+<!--<div class="logo-corner">
     <img src="{{ asset('images\CODE CORNER LOGO1.jpg') }}" alt="Code Corner Logo">
-</div>
+</div>-->
 <div class="container">
     <h1>Code Corner</h1>
 
@@ -254,15 +39,52 @@
                 ["name" => " ليزا كات", "price" => "2.0 JD"],
             
             ]],
-            ["title" => "٧ أنواع بوظة 🍦", "img" => "Various_coloured_ice_cream_shutterstock_1678666684.jpg", "items" => [
-                ["name" => "شوكولاتة", "price" => "1.5 JD"],
-                ["name" => "فانيلا", "price" => " 1.5 JD"],
-                ["name" => "فراولة", "price" => " 1.5 JD"],
-                ["name" => " سنيكرز ", "price" => " 1.5 JD"],
-                ["name" => "رينبو", "price" => " 1.5 JD"],
-                ["name" => " تشيز كيك ", "price" => " 1.5 JD"],
-                ["name" => "أوريو", "price" => " 1.5 JD"]
-            ]],
+[
+    "title" => "البوظة 🍦",
+    "img"   => "Various_coloured_ice_cream_shutterstock_1678666684.jpg",
+    "items" => [
+        [
+            "name"  => "شوكولاتة",
+            "price" => "1 JD / سكوب — 1.5 JD / سكوبين"
+        ],
+        [
+            "name"  => "فانيلا",
+            "price" => "1 JD / سكوب — 1.5 JD / سكوبين"
+        ],
+        [
+            "name"  => "فراولة",
+            "price" => "1 JD / سكوب — 1.5 JD / سكوبين"
+        ],
+        [
+            "name"  => "سنيكرز",
+            "price" => "1 JD / سكوب — 1.5 JD / سكوبين"
+        ],
+        [
+            "name"  => "رينبو",
+            "price" => "1 JD / سكوب — 1.5 JD / سكوبين"
+        ],
+        [
+            "name"  => "تشيز كيك",
+            "price" => "1 JD / سكوب — 1.5 JD / سكوبين"
+        ],
+        [
+            "name"  => "أوريو",
+            "price" => "1 JD / سكوب — 1.5 JD / سكوبين"
+        ]
+    ]
+]
+,
+
+  [
+    "title" => "Cooffe ☕",
+    "img" => "v60pic.jpg",
+    "items" => [
+        ["name" => "V60",         "price" => "2.5 JD"],
+        ["name" => "كولد برو",    "price" => "2.5 JD"]
+    ]
+],
+
+
             ["title" => "٣ أنواع سلش 🧊", "img" => "WhatsApp Image 2025-06-04 at 20.21.31_3c502a52.jpg", "items" => [
                 ["name" => "ليمون نعنع", "price" => "1.0 JD"],
                 ["name" => "فراولة", "price" => "1.0 JD"],
@@ -285,7 +107,7 @@
                 ["name" => "كوكتيل فراولة", "price" => "2.0 JD"],
                 ["name" => "كوكتيل مانجو", "price" => "2.0 JD"]
             ]],
-            ["title" => " milkshakes 🍨", "img" => "milkshakes.jpg", "items" => [
+            ["title" => " milkshakes 🍨", "img" => "milkshake pics.jpg", "items" => [
                ["name" => "ميلك شيك شوكولاتة", "price" => "2.0 JD"],
     ["name" => "ميلك شيك فانيلا", "price" => "2.0 JD"],
     ["name" => "ميلك شيك فراولة", "price" => "2.0 JD"],
