@@ -5,7 +5,229 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Code Corner Menu</title>
     <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{{ asset('style.css') }}">
+<style>
+       body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Almarai', sans-serif;
+            background-color: #305569;
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        nav {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: #a5c62b;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #d4ed6b;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #a5c62b;
+            font-size: 36px;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        h1::after {
+            content: "";
+            display: block;
+            width: 150px;
+            height: 3px;
+            background: #a5c62b;
+            margin: 15px auto;
+        }
+
+        .section {
+            background-color: #3f6b7d;
+            border-right: 6px solid #a5c62b;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .section-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .section-text {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .section-img {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+        }
+
+        .section-img img {
+            max-width: 100%;
+            height: auto;
+            max-height: 200px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border: 3px solid #a5c62b;
+        }
+
+        .section h2 {
+            font-size: 24px;
+            color: #ffffff;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #a5c62b;
+        }
+
+        .section ul {
+            list-style-type: none;
+            padding: 0;
+            font-size: 18px;
+        }
+
+        .section ul li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px dashed rgba(255,255,255,0.2);
+            padding: 8px 0;
+        }
+
+        .price {
+            color: #a5c62b;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .highlight {
+            color: #a5c62b;
+            font-weight: bold;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        .feedback-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #a5c62b;
+            color: #1e2b30;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .feedback-link:hover {
+            background-color: #91b626;
+            transform: translateY(-2px);
+        }
+
+        .special-note {
+            background: rgba(165, 198, 43, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-right: 3px solid #a5c62b;
+        }
+
+        .feedback-section {
+            background-color: #3f6b7d;
+            border-right: 6px solid #a5c62b;
+            border-radius: 16px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+
+        .feedback-section h2 {
+            color: #ffffff;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .feedback-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .section-content {
+                flex-direction: column;
+            }
+
+            .section-img {
+                order: -1;
+                margin-bottom: 20px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .section h2 {
+                font-size: 22px;
+            }
+        } 
+     /*    .logo-corner {
+        position: fixed;            
+        top: 20px;                  
+        left: 20px;               
+        z-index: 9999;                
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        padding: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(4px);   
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .logo-corner:hover {
+        transform: scale(1.08);
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .logo-corner img {
+        height: 85px;
+        width: 85px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    */
+</style>
 </head>
 <body>
 <div style="text-align:center; margin: 40px 0;">
