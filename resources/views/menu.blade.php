@@ -427,27 +427,8 @@
     ]
 ],
 
-                    [
-                        "title" => "العصائر 🥤", 
-                        "img" => "blender.jpg", 
-                        "items" => [
-                            ["name" => "ليمون ونعنع", "price" => "1.5 JD"],
-                            ["name" => "ليمون", "price" => "1.5 JD"],
-                            ["name" => "برتقال", "price" => "1.5 JD"]
-                        ]
-                    ],
-
-                    [
-                        "title" => "Code Corner Mixology ✨", 
-                        "img" => "special-mix.jpg", 
-                        "items" => [
-                            ["name" => "فانيلا + حليب + موز", "price" => "2.8 JD"],
-                            ["name" => "فراولة + بوظة فانيلا + حليب", "price" => "2.8 JD"],
-                            ["name" => "كيت كات + موز + شوكولاتة", "price" => "3.0 JD"]
-                        ],
-                        "special" => true
-                    ]
-                ];
+                    
+            
             @endphp
 
             @foreach($menu as $item)
