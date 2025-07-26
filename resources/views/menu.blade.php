@@ -363,8 +363,8 @@
         <div class="menu-grid">
             @php
                 $menu = [
-                   
-                 [
+                
+            [
                         "title" => "حلويات 🍰", 
                         "img" => "IMG_1723.PNG", 
                         "items" => [
@@ -400,7 +400,7 @@
 ],
             
                     
-                  [
+                 [
     "title" => "ميلك شيك 🍨", 
     "img" => "milkshake pics.jpg", 
     "items" => [
@@ -428,9 +428,9 @@
 ],
 
                     
-            
+        ];
             @endphp
-
+                
             @foreach($menu as $item)
                 <div class="menu-card @if(isset($item['special'])) special-card @endif">
                     <div class="card-header">
@@ -438,7 +438,7 @@
                         <div class="card-category">{{ $item['title'] }}</div>
                     </div>
                     <div class="card-body">
-                      
+                    
                         </h3>
                         <ul class="menu-items">
                             @foreach($item['items'] as $menuItem)
