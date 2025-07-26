@@ -364,6 +364,16 @@
             @php
                 $menu = [
                    
+                 [
+                        "title" => "حلويات 🍰", 
+                        "img" => "sweets.jpg", 
+                        "items" => [
+                            ["name" => "تشيز كيك توت", "price" => "2.5 JD"],
+                            ["name" => "تشيز أوريو", "price" => "2.5 JD"],
+                            ["name" => "تشيز لوتس", "price" => "2.5 JD"],
+                            ["name" => "هبة البستاشيو", "price" => "2.5 JD"],
+                        ]
+                    ],
                     [
                         "title" => "البوظة 🍦",
                         "img"   => "Various_coloured_ice_cream_shutterstock_1678666684.jpg",
@@ -413,7 +423,7 @@
                             ["name" => "برتقال", "price" => "1.5 JD"]
                         ]
                     ],
-                    
+
                     [
                         "title" => "Code Corner Mixology ✨", 
                         "img" => "special-mix.jpg", 
