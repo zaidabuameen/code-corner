@@ -113,7 +113,7 @@
         <a href="{{ route('notes.index') }}"><i class="fa-solid fa-clipboard"></i><span>الملاحظات</span></a>
         <a href="{{ route('menu') }}"><i class="fa-solid fa-utensils"></i><span>المنيو</span></a>
         <!-- Instagram link in nav -->
-        <a href="https://www.instagram.com/YOUR_INSTAGRAM_USERNAME" target="_blank" rel="noopener" aria-label="انستغرام">
+        <a href="https://www.instagram.com/_codecorner?igsh=NGZraGQ4Z3hneXBs&utm_source=qr" target="_blank" rel="noopener" aria-label="انستغرام">
           <i class="fa-brands fa-instagram"></i><span>انستغرام</span>
         </a>
       </nav>
@@ -280,7 +280,7 @@
       <a href="https://www.linkedin.com/in/zaid-abuameen-292070259/" target="_blank" rel="noopener">Zaid Abu Ameen</a>
     </h4>
     <div style="margin-top: 10px;">
-      <a href="https://www.instagram.com/YOUR_INSTAGRAM_USERNAME" target="_blank" rel="noopener" aria-label="انستغرام">
+      <a href="https://www.instagram.com/_codecorner?igsh=NGZraGQ4Z3hneXBs&utm_source=qr" target="_blank" rel="noopener" aria-label="انستغرام">
         <i class="fa-brands fa-instagram" style="font-size: 1.8rem;"></i>
       </a>
     </div>
