@@ -1,0 +1,1 @@
+<?php /**PATH C:\Users\wmutl\notes-app\resources\views\welcome.blade.php ENDPATH**/ ?>
