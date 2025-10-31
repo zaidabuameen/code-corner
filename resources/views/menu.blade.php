@@ -234,6 +234,28 @@
             ['name' => 'كوكتيل موز وحليب - S', 'price' => '1.5 JD'],
           ]
         ],
+        [
+  'title' => 'مشروبات لاتيه ☕️',
+  'img' => 'C:\Users\wmutl\Desktop\code corner\late.jpeg',
+  'items' => [
+    ['name' => 'سبانش لاتيه (Hot / Ice) - L', 'price' => '2.5 JD'],
+    ['name' => 'سبانش لاتيه (Hot / Ice) - S', 'price' => '2.0 JD'],
+    ['name' => 'لاتيه (Hot / Ice) - L', 'price' => '2.5 JD'],
+    ['name' => 'لاتيه (Hot / Ice) - S', 'price' => '2.0 JD'],
+    ['name' => 'بستاشيو لاتيه (Hot / Ice) - L', 'price' => '2.5 JD'],
+    ['name' => 'لوتس لاتيه (Hot / Ice) - L', 'price' => '2.5 JD'],
+    ['name' => 'ايس أمريكانو - L', 'price' => '2.0 JD'],
+    ['name' => 'ايس أمريكانو - S', 'price' => '1.5 JD'],
+    ['name' => 'كراميل مكياتو (Hot / Ice) - L', 'price' => '2.5 JD'],
+    ['name' => 'كراميل مكياتو (Hot / Ice) - S', 'price' => '2.0 JD'],
+    ['name' => 'ايس موكا (دارك) - L', 'price' => '2.5 JD'],
+    ['name' => 'ايس موكا (دارك) - S', 'price' => '2.0 JD'],
+    ['name' => 'فلات وايت - M', 'price' => '1.5 JD'],
+    ['name' => 'أميريكان - S', 'price' => '0.75 JD']
+  ]
+  
+],
+
       ];
       @endphp
 
