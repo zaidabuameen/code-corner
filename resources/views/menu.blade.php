@@ -143,21 +143,28 @@
       </section>
 
       @php
-      $menu = [
-        [
-          'title' => 'حلويات 🍰',
-          'img' => 'IMG_1723.PNG',
-          'items' => [
-            ['name' => 'تشيز كيك توت', 'price' => '2.5 JD'],
-            ['name' => 'تشيز أوريو', 'price' => '2.5 JD'],
-            ['name' => 'تشيز لوتس', 'price' => '2.5 JD'],
-            ['name' => 'هبة البستاشيو', 'price' => '2.5 JD'],
-          ]
-        ],
-        [
-          'title' => 'البوظة 🍦',
-          'img' => 'Various_coloured_ice_cream_shutterstock_1678666684.jpg',
-          'items' => [
+$menu = [
+    [
+        'title' => 'Code Corner Mixology',
+        'img' => 'Mixology.jpeg',
+        'items' => [
+        
+        ]
+    ],
+
+    [
+        'title' => 'حلويات 🍰',
+        'img' => 'IMG_1723.PNG',
+        'items' => [
+            ['name' => 'كيك كبير (تشيز كيك , لوتس , بستاشيو , تيراميسو, احمد الزامل)', 'price' => '2.5 JD'],
+            ['name' => 'كيك صغير (تشيز كيك , لوتس , بستاشيو , تيراميسو, احمد الزامل)', 'price' => '2.0 JD'],
+        ]
+    ],
+
+    [
+        'title' => 'البوظة 🍦',
+        'img' => 'Various_coloured_ice_cream_shutterstock_1678666684.jpg',
+        'items' => [
             ['name' => 'شوكولاتة', 'price' => '1 JD / سكوب — 1.5 JD / سكوبين'],
             ['name' => 'فانيلا', 'price' => '1 JD / سكوب — 1.5 JD / سكوبين'],
             ['name' => 'فراولة', 'price' => '1 JD / سكوب — 1.5 JD / سكوبين'],
@@ -166,126 +173,145 @@
             ['name' => 'تشيز كيك', 'price' => '1 JD / سكوب — 1.5 JD / سكوبين'],
             ['name' => 'أوريو', 'price' => '1 JD / سكوب — 1.5 JD / سكوبين'],
             ['name' => 'عربيه', 'price' => '1 JD / سكوب — 1.5 JD / سكوبين'],
-          ]
-        ],
-        [
-          'title' => 'قهوة خاصة ☕',
-          'img' => 'v60pic.jpg',
-          'special' => true,
-          'items' => [
-            ['name' => 'V60 إثيوبي (ييرغاشيف)', 'price' => '2.5 JD'],
-            ['name' => 'V60 كولومبي (هويلا)', 'price' => '2.5 JD'],
-            ['name' => 'V60 برازيلي (سانتوس)', 'price' => '2.5 JD'],
-            ['name' => 'كولد برو إثيوبي', 'price' => '2.5 JD'],
-            ['name' => 'كولد برو كولومبي', 'price' => '2.5 JD'],
-          ]
-        ],
-        [
-          'title' => 'ميلك شيك 🍨',
-          'img' => 'milkshake pics.jpg',
-          'items' => [
-            ['name' => 'ميلك شيك شوكولاتة - M', 'price' => '2.5 JD'],
-            ['name' => 'ميلك شيك شوكولاتة - S', 'price' => '2.0 JD'],
-            ['name' => 'ميلك شيك فانيلا - M', 'price' => '2.5 JD'],
-            ['name' => 'ميلك شيك فانيلا - S', 'price' => '2.0 JD'],
-            ['name' => 'ميلك شيك فراولة - M', 'price' => '2.5 JD'],
-            ['name' => 'ميلك شيك فراولة - S', 'price' => '2.0 JD'],
-            ['name' => 'ميلك شيك سنيكرز - M', 'price' => '2.5 JD'],
-            ['name' => 'ميلك شيك سنيكرز - S', 'price' => '2.0 JD'],
-            ['name' => 'ميلك شيك رينبو - M', 'price' => '2.5 JD'],
-            ['name' => 'ميلك شيك رينبو - S', 'price' => '2.0 JD'],
-            ['name' => 'ميلك شيك تشيز كيك - M', 'price' => '2.5 JD'],
-            ['name' => 'ميلك شيك تشيز كيك - S', 'price' => '2.0 JD'],
-            ['name' => 'ميلك شيك أوريو - M', 'price' => '2.5 JD'],
-            ['name' => 'ميلك شيك أوريو - S', 'price' => '2.0 JD'],
-            ['name' => 'ميلك شيك بستاشيو - M', 'price' => '2.5 JD'],
-            ['name' => 'ميلك شيك بستاشيو - S', 'price' => '2.0 JD'],
-          ]
-        ],
-        [
-          'title' => 'فرابتشينو ☕️',
-          'img' => 'frab2.jpeg',
-          'items' => [
-            ['name' => 'فرابتشينو فانيلا - M', 'price' => '2.0 JD'],
-            ['name' => 'فرابتشينو فانيلا - S', 'price' => '1.5 JD'],
-            ['name' => 'فرابتشينو بندق - M', 'price' => '2.0 JD'],
-            ['name' => 'فرابتشينو بندق - S', 'price' => '1.5 JD'],
-            ['name' => 'فرابتشينو شوكلت - M', 'price' => '2.0 JD'],
-            ['name' => 'فرابتشينو شوكلت - S', 'price' => '1.5 JD'],
-          ]
-        ],
-        [
-          'title' => 'العصائر 🥤',
-          'img' => 'karkadeh.jpeg',
-          'items' => [
-            ['name' => 'كركديه - M', 'price' => '1.0 JD'],
-            ['name' => 'كركديه - S', 'price' => '0.75 JD'],
-            ['name' => 'سموذي ليمون ونعنع - M', 'price' => '2.0 JD'],
-            ['name' => 'سموذي ليمون ونعنع - S', 'price' => '1.5 JD'],
-            ['name' => 'سموذي فراولة - M', 'price' => '2.0 JD'],
-            ['name' => 'سموذي فراولة - S', 'price' => '1.5 JD'],
-            ['name' => 'سموذي مانجا - M', 'price' => '2.0 JD'],
-            ['name' => 'سموذي مانجا - S', 'price' => '1.5 JD'],
-            ['name' => 'كوكتيل موز وحليب وفراولة - M', 'price' => '2.0 JD'],
-            ['name' => 'كوكتيل موز وحليب وفراولة - S', 'price' => '1.5 JD'],
-            ['name' => 'كوكتيل فراولة وحليب - M', 'price' => '2.0 JD'],
-            ['name' => 'كوكتيل فراولة وحليب - S', 'price' => '1.5 JD'],
-            ['name' => 'كوكتيل موز وحليب - M', 'price' => '2.0 JD'],
-            ['name' => 'كوكتيل موز وحليب - S', 'price' => '1.5 JD'],
-          ]
-        ],
-        [
-  'title' => 'مشروبات لاتيه ☕️',
-  'img' => 'C:\Users\wmutl\Desktop\code corner\late.jpeg',
-  'items' => [
-    ['name' => 'سبانش لاتيه (Hot / Ice) - L', 'price' => '2.5 JD'],
-    ['name' => 'سبانش لاتيه (Hot / Ice) - S', 'price' => '2.0 JD'],
-    ['name' => 'لاتيه (Hot / Ice) - L', 'price' => '2.5 JD'],
-    ['name' => 'لاتيه (Hot / Ice) - S', 'price' => '2.0 JD'],
-    ['name' => 'بستاشيو لاتيه (Hot / Ice) - L', 'price' => '2.5 JD'],
-    ['name' => 'لوتس لاتيه (Hot / Ice) - L', 'price' => '2.5 JD'],
-    ['name' => 'ايس أمريكانو - L', 'price' => '2.0 JD'],
-    ['name' => 'ايس أمريكانو - S', 'price' => '1.5 JD'],
-    ['name' => 'كراميل مكياتو (Hot / Ice) - L', 'price' => '2.5 JD'],
-    ['name' => 'كراميل مكياتو (Hot / Ice) - S', 'price' => '2.0 JD'],
-    ['name' => 'ايس موكا (دارك) - L', 'price' => '2.5 JD'],
-    ['name' => 'ايس موكا (دارك) - S', 'price' => '2.0 JD'],
-    ['name' => 'فلات وايت - M', 'price' => '1.5 JD'],
-    ['name' => 'أميريكان - S', 'price' => '0.75 JD']
-  ]
-  
+        ]
+    ],
+
+    [
+        'title' => 'قهوة خاصة ☕',
+        'img' => 'v60pic.jpg',
+        'special' => true,
+        'items' => [
+            ['name' => 'V60 إثيوبي (ييرغاشيف)', 'price' => '2.0 JD'],
+            ['name' => 'V60 كولومبي (هويلا)', 'price' => '2.0 JD'],
+            ['name' => 'V60 برازيلي (سانتوس)', 'price' => '2.0 JD'],
+            ['name' => 'ماتشا ( اورجينال , فراولة , فانيلا , مانجا )', 'price' => '2.5 JD'],
+        ]
+    ],
+
+    [
+        'title' => 'ميلك شيك 🍨',
+        'img' => 'milkshake pics.jpg',
+        'items' => [
+            ['name' => 'ميلك شيك شوكولاتة - L', 'price' => '2.5 JD'],
+            ['name' => 'ميلك شيك شوكولاتة - M', 'price' => '2.0 JD'],
+            ['name' => 'ميلك شيك فانيلا - L', 'price' => '2.5 JD'],
+            ['name' => 'ميلك شيك فانيلا - M', 'price' => '2.0 JD'],
+            ['name' => 'ميلك شيك فراولة - L', 'price' => '2.5 JD'],
+            ['name' => 'ميلك شيك فراولة - M', 'price' => '2.0 JD'],
+            ['name' => 'ميلك شيك سنيكرز - L', 'price' => '2.5 JD'],
+            ['name' => 'ميلك شيك سنيكرز - M', 'price' => '2.0 JD'],
+            ['name' => 'ميلك شيك رينبو - L', 'price' => '2.5 JD'],
+            ['name' => 'ميلك شيك رينبو - M', 'price' => '2.0 JD'],
+            ['name' => 'ميلك شيك تشيز كيك - L', 'price' => '2.5 JD'],
+            ['name' => 'ميلك شيك تشيز كيك - M', 'price' => '2.0 JD'],
+            ['name' => 'ميلك شيك أوريو - L', 'price' => '2.5 JD'],
+            ['name' => 'ميلك شيك أوريو - M', 'price' => '2.0 JD'],
+            ['name' => 'ميلك شيك بستاشيو - L', 'price' => '2.5 JD'],
+            ['name' => 'ميلك شيك بستاشيو - M', 'price' => '2.0 JD'],
+        ]
+    ],
+
+    [
+        'title' => 'فرابتشينو ☕️',
+        'img' => 'frab2.jpeg',
+        'items' => [
+            ['name' => 'فرابتشينو فانيلا - L', 'price' => '2.0 JD'],
+            ['name' => 'فرابتشينو فانيلا - M', 'price' => '1.5 JD'],
+            ['name' => 'فرابتشينو بندق - L', 'price' => '2.0 JD'],
+            ['name' => 'فرابتشينو بندق - M', 'price' => '1.5 JD'],
+            ['name' => 'فرابتشينو شوكلت - L', 'price' => '2.0 JD'],
+            ['name' => 'فرابتشينو شوكلت - M', 'price' => '1.5 JD'],
+            ['name' => 'فرابتشينو كراميل - L', 'price' => '2.0 JD'],
+            ['name' => 'فرابتشينو كراميل - M', 'price' => '1.5 JD'],
+
+
+        ]
+    ],
+
+    [
+        'title' => 'العصائر 🥤',
+        'img' => 'karkadeh.jpeg',
+        'items' => [
+           ['name' => 'كركديه - L', 'price' => '1.0 JD'],
+['name' => 'كركديه - M', 'price' => '0.75 JD'],
+['name' => 'سموذي ليمون ونعنع - L', 'price' => '2.0 JD'],
+['name' => 'سموذي ليمون ونعنع - M', 'price' => '1.5 JD'],
+['name' => 'سموذي فراولة - L', 'price' => '2.0 JD'],
+['name' => 'سموذي فراولة - M', 'price' => '1.5 JD'],
+['name' => 'سموذي مانجا - L', 'price' => '2.0 JD'],
+['name' => 'سموذي مانجا - M', 'price' => '1.5 JD'],
+['name' => 'كوكتيل موز وحليب وفراولة - L', 'price' => '2.0 JD'],
+['name' => 'كوكتيل موز وحليب وفراولة - M', 'price' => '1.5 JD'],
+['name' => 'كوكتيل فراولة وحليب - L', 'price' => '2.0 JD'],
+['name' => 'كوكتيل فراولة وحليب - M', 'price' => '1.5 JD'],
+['name' => 'كوكتيل موز وحليب - L', 'price' => '2.0 JD'],
+['name' => 'كوكتيل موز وحليب - M', 'price' => '1.5 JD'],
 ],
+        
+    ],
 
-      ];
-      @endphp
+    [
+        'title' => 'مشروبات لاتيه ☕️',
+        'img' => 'espreso.jpg',
+        'items' => [
+            ['name' => 'لاتيه (سبانش , بستاشيو , لوتس , عادي) - L', 'price' => '2.0 JD'],
+            ['name' => 'لاتيه (سبانش , بستاشيو , لوتس , عادي) - M ', 'price' => '1.5 JD'],
+            ['name' => ' أمريكانو - L', 'price' => '1.5 JD'],
+            ['name' => ' أمريكانو - M', 'price' => '1.0 JD'],
+            ['name' => 'كراميل مكياتو  - L', 'price' => '2.0 JD'],
+            ['name' => 'كراميل مكياتو  - M', 'price' => '1.5 JD'],
+            ['name' => ' موكا (دارك , وايت) - L', 'price' => '2.0 JD'],
+            ['name' => ' موكا (دارك , وايت) - M', 'price' => '1.5 JD'],
+            ['name' => 'فلات وايت  ', 'price' => '1.5 JD'],
+            ['name' => 'إسبريسو  ', 'price' => '1.0 JD'],
+            ['name' => 'أميريكان  ', 'price' => '0.75 JD'],
+            ['name' => 'هوت شوكلت  ', 'price' => '1.0 JD'],
+            ['name' => 'هوت بستاشيو  ', 'price' => '2.0 JD'],
+            ['name' => 'هوت لوتس  ', 'price' => '2.0 JD'],
+            ['name' => 'كابتشينو  ', 'price' => '1.5 JD'],
 
-      @foreach ($menu as $i => $item)
-        @php $id = 'sec' . $i; @endphp
-        <section id="{{ $id }}" class="section">
-          <h2><i class="fa-solid fa-layer-group"></i> {{ $item['title'] }}</h2>
-          <div class="menu-grid">
+
+        ]
+    ],
+];
+@endphp
+
+
+@foreach ($menu as $i => $item)
+    @php $id = 'sec' . $i; @endphp
+    <section id="{{ $id }}" class="section">
+        <h2><i class="fa-solid fa-layer-group"></i> {{ $item['title'] }}</h2>
+
+        <div class="menu-grid">
             <article class="card">
-              @if (!empty($item['special']))
-                <div class="ribbon">✨ مميز</div>
-              @endif
-              <div class="card-media">
-                <img src="{{ asset('images/' . $item['img']) }}" alt="{{ $item['title'] }}" loading="lazy" />
-                <div class="badge">{{ $item['title'] }}</div>
-              </div>
-              <div class="card-body">
-                <ul class="items">
-                  @foreach ($item['items'] as $menuItem)
-                    <li class="item">
-                      <span class="item-name">{{ $menuItem['name'] }}</span>
-                      <span class="item-price">{{ $menuItem['price'] }}</span>
-                    </li>
-                  @endforeach
-                </ul>
-              </div>
+
+                @if (!empty($item['special']))
+                    <div class="ribbon">✨ مميز</div>
+                @endif
+
+                <div class="card-media">
+                    <img src="{{ asset('images/' . $item['img']) }}" 
+                         alt="{{ $item['title'] }}" 
+                         loading="lazy">
+
+                    <div class="badge">{{ $item['title'] }}</div>
+                </div>
+
+                <div class="card-body">
+                    <ul class="items">
+                        @foreach ($item['items'] as $menuItem)
+                            <li class="item">
+                                <span class="item-name">{{ $menuItem['name'] }}</span>
+                                <span class="item-price">{{ $menuItem['price'] }}</span>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+
             </article>
-          </div>
-        </section>
-      @endforeach
+        </div>
+    </section>
+@endforeach
 
       <section class="feedback">
         <h3>شاركنا رأيك!</h3>
